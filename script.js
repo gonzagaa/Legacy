@@ -129,3 +129,43 @@ if (larguraDaTela < 800) {
       loop: true,
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  function animateNumbers(el) {
+      let target = parseInt(el.getAttribute("data-value"));
+      let current = 0;
+      let increment = Math.ceil(target / 100); // Define um incremento proporcional ao valor final
+      let duration = 8000; // Duração da animação em milissegundos
+      let steps = duration / 16; // Aproximadamente 60 FPS (16ms por frame)
+      let count = 0;
+
+      let interval = setInterval(() => {
+          current += increment;
+          count++;
+
+          if (current >= target || count >= steps) {
+              current = target;
+              clearInterval(interval);
+          }
+
+          el.textContent = target >= 1000 ? current.toLocaleString() : current + "%";
+      }, 16);
+  }
+
+  function startObserving() {
+      const elements = document.querySelectorAll(".animated-number");
+
+      const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  animateNumbers(entry.target);
+                  observer.unobserve(entry.target); // Para a observação após a animação começar
+              }
+          });
+      }, { threshold: 0.5 }); // Inicia quando 50% do elemento estiver visível
+
+      elements.forEach(el => observer.observe(el));
+  }
+
+  startObserving();
+});

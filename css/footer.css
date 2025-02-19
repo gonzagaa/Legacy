@@ -93,8 +93,7 @@ footer .redes-sociais ion-icon {
     }
 
     footer#footer a:hover {
-        color: var(--color-text);
-        cursor: url("../assets/CURSOR\ LSB.svg"), auto;
+        color: #000;
         transform: scale(1.1);
     }
 

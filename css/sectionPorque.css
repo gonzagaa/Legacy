@@ -15,7 +15,18 @@
 #porque .cards .card {
     text-align: left;
     position: relative;
-    padding-block: .5rem;
+    padding-block: 2rem;
+    padding-inline: .5rem;
+}
+
+#porque .cards .card::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    height: 100%;
+    width: 3px;
+    top: 0;
+    background: var(--gradient);
 }
 
 #porque .cards .card h3 {
@@ -79,12 +90,35 @@
     section#porque .card {
         width: 100%;
         overflow: hidden;
+        cursor: pointer;
+        border-radius: 1rem;
     }
 
     section#porque .cards .card h3 {
         font-size: 1.8rem;
         font-weight: 400;
     }
+
+    section#porque .card p {
+        padding-left: 1rem;
+        position: absolute;
+        transform: translateY(50%);
+        opacity: 0;
+
+        transition: all 700ms ease-in-out;
+    }
+
+    section#porque .card:hover p {
+        position: initial;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    section#porque .card:hover {
+        border: 1px solid #b992574d;
+        background: linear-gradient(130deg, #111111, #101010);
+    }
+
 
     section#porque .image img.desktop {
         margin-top: 0;

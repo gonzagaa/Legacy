@@ -133,6 +133,33 @@
   border: 1px solid #ffffffc1;
 }
 
+#home button:hover {
+  filter: brightness(1.1);
+  cursor: pointer;
+  box-shadow: 0 20px 30px #b9925721;
+  background: rgba(255, 255, 255, 0.122);
+}
+
+#home .depoimentos {
+  margin-top: 2rem;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#home .depoimentos img {
+  width: 10rem;
+}
+
+#home .depoimentos p {
+  color: #fff;
+  margin-top: 0;
+  font-weight: 600;
+}
+
 #home .depoimentos {
   margin-top: 2rem;
 
@@ -162,7 +189,7 @@
     justify-content: center;
     position: relative;
 
-    height: 84vh;
+    height: 90vh;
 
     border-radius: 0;
     box-shadow: initial;
@@ -242,7 +269,7 @@
 
 @media (min-width: 1700px) {
   header#home {
-    height: 84vh;
+    height: 90vh;
   }
   header#home .content h1 {
     font-size: 6rem;
