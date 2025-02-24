@@ -27,6 +27,7 @@
     object-fit: cover;
 
     transition: all 300ms ease-in-out;
+    filter: brightness(.7);
 }
 
 #cards .cards .card:hover img.bg {
@@ -37,9 +38,9 @@
     content: '';
     position: absolute;
     width: 100%;
-    height: 110%;
+    height: 105%;
     z-index: 1;
-    background: linear-gradient(to top, #000, transparent);
+    background: linear-gradient(to top, #000 10%, transparent);
     left: 0;
     top: 0;
 }
@@ -88,12 +89,24 @@
 @media (min-width: 1080px) {
     section#cards .cards {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    section#cards .card {
+        height: 100%;
+    }
+
+    section#cards .wrapper {
+        width: 100%;
     }
 
     section#cards .cards .card .text {
         padding: 5rem;
         margin-top: 60%;
+    }
+
+    section#cards .cards .card:nth-child(3) .text {
+        margin-top: 50%;
     }
 
     section#cards .cards .card .text h2 {
