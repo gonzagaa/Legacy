@@ -105,9 +105,9 @@
         margin-top: 60%;
     }
 
-    section#cards .cards .card:nth-child(3) .text {
+    /* section#cards .cards .card:nth-child(3) .text {
         margin-top: 50%;
-    }
+    } */
 
     section#cards .cards .card .text h2 {
         font-size: 2.5rem;
